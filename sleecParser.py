@@ -526,7 +526,7 @@ def check_conflict(model, rules, Action_Mapping, Actions, model_str="", check_pr
         clear_all(Actions)
         reset_rules(rules)
         measure_inv.clear()
-        derivation_rule.reset()
+        dreset()
         print("*" * 100)
         output += "*" * 100 + '\n'
     return conflict_res, output, adj_hl
