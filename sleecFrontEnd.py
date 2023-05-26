@@ -1,8 +1,14 @@
 import idlelib.colorizer as ic
 import idlelib.percolator as ip
 import re
+import sys
 import tkinter as tk
+from os.path import dirname, join
+
+sys.path.append(join(dirname(__file__), "Analyzer"))
+
 from sleecParser import check_input_red, check_input_conflict, check_input_concerns
+
 
 
 def read_model_file(file_path):
