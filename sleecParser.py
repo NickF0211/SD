@@ -1,11 +1,12 @@
 from pysmt.fnode import FNode
 
-from Analyzer.analyzer import check_property_refining, clear_all
-from Analyzer.proof_reader import check_and_minimize
-from Analyzer.type_constructor import create_type, create_action, union
-from Analyzer.sleecOp import WhenRule, happen_within, otherwise, unless, complie_measure, Concern
-from Analyzer.logic_operator import *
-from Analyzer.proof_reader import Fact
+from analyzer import check_property_refining, clear_all
+from proof_reader import check_and_minimize
+from type_constructor import create_type, create_action, union
+from sleecOp import WhenRule, happen_within, otherwise, unless, complie_measure, Concern
+from logic_operator import *
+from proof_reader import Fact
+from derivation_rule import reset as dreset
 
 from textx import metamodel_from_file, textx_isinstance
 
@@ -626,7 +627,7 @@ def check_red(model, rules, Action_Mapping, Actions, model_str="", check_proof=F
         clear_all(Actions)
         reset_rules(rules)
         measure_inv.clear()
-        derivation_rule.reset()
+        dreset()
         print("*" * 100)
         output += "*" * 100 + '\n'
     return red_result, output, adj_hl
