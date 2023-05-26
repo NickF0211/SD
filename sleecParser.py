@@ -416,7 +416,7 @@ def check_concerns(model, rules, concerns, Action_Mapping, Actions, model_str=""
         clear_all(Actions)
         reset_rules(rules)
         measure_inv.clear()
-        derivation_rule.reset()
+        dreset()
         print("*" * 100)
         output += "*" * 100 + '\n'
     return concern_raised, output, adj_hl
